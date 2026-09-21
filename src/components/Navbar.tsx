@@ -1,0 +1,183 @@
+import React, { useState } from 'react';
+import { Mail, Linkedin, Github, Menu, X } from 'lucide-react';
+import { HoneycombIcon } from './HoneycombIcon';
+
+export type PageRoute = 'home' | 'blog' | 'proyectos' | 'skills' | 'proyecto-detalle' | 'articulo-detalle';
+
+interface NavbarProps {
+  currentRoute?: PageRoute;
+  onNavigate?: (route: PageRoute) => void;
+  onScrollToAbout?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigate, onScrollToAbout }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleLinkClick = (e: React.MouseEvent, route: PageRoute) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (onNavigate) {
+      onNavigate(route);
+    } else {
+      window.location.hash = route === 'home' ? '/' : `/${route}`;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (onScrollToAbout) {
+      onScrollToAbout();
+    } else {
+      const target = document.getElementById('sobre-mi');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  return (
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 sm:pt-6 pointer-events-none font-serif">
+      <header className="max-w-5xl mx-auto pointer-events-auto bg-[#85984e] text-white rounded-[26px] shadow-lg shadow-[#85984e]/20 px-6 sm:px-8 py-3.5 flex items-center justify-between transition-all">
+        {/* Logo Left: Honeycomb + MerlyDev -> Leads to Home */}
+        <a
+          href="#/"
+          onClick={(e) => handleLinkClick(e, 'home')}
+          className="flex items-center gap-2.5 text-xl sm:text-2xl font-serif font-bold tracking-normal text-white hover:opacity-90 transition-opacity"
+        >
+          <HoneycombIcon className="w-8 h-8 drop-shadow-xs" />
+          <span>MerlyDev</span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-7">
+          {/* Sobre mí va solo en el inicio con scroll suave */}
+          <a
+            href="#sobre-mi"
+            onClick={handleAboutClick}
+            className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
+          >
+            Sobre mí
+          </a>
+          <a
+            href="#/blog"
+            onClick={(e) => handleLinkClick(e, 'blog')}
+            className={`text-base font-serif font-bold transition-colors ${
+              currentRoute === 'blog' || currentRoute === 'articulo-detalle'
+                ? 'text-[#f3dc99] underline underline-offset-4'
+                : 'text-white hover:text-[#f3dc99]'
+            }`}
+          >
+            Blog
+          </a>
+          <a
+            href="#/proyectos"
+            onClick={(e) => handleLinkClick(e, 'proyectos')}
+            className={`text-base font-serif font-bold transition-colors ${
+              currentRoute === 'proyectos' || currentRoute === 'proyecto-detalle'
+                ? 'text-[#f3dc99] underline underline-offset-4'
+                : 'text-white hover:text-[#f3dc99]'
+            }`}
+          >
+            Proyectos
+          </a>
+          <a
+            href="#/skills"
+            onClick={(e) => handleLinkClick(e, 'skills')}
+            className={`text-base font-serif font-bold transition-colors ${
+              currentRoute === 'skills' ? 'text-[#f3dc99] underline underline-offset-4' : 'text-white hover:text-[#f3dc99]'
+            }`}
+          >
+            Skills
+          </a>
+
+          {/* Social Icons Right */}
+          <div className="flex items-center gap-3.5 pl-2 border-l border-white/30 text-white">
+            <a
+              href="mailto:contacto@merlymalena2303@hotmail.com"
+              aria-label="Email"
+              className="hover:text-[#f3dc99] hover:scale-110 transition-all p-0.5"
+            >
+              <Mail size={22} strokeWidth={2.2} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-[#f3dc99] hover:scale-110 transition-all p-0.5"
+            >
+              <Linkedin size={22} strokeWidth={2.2} />
+            </a>
+            <a
+              href="https://github.com/MerlyMalena"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hover:text-[#f3dc99] hover:scale-110 transition-all p-0.5"
+            >
+              <Github size={22} strokeWidth={2.2} />
+            </a>
+          </div>
+        </nav>
+
+        {/* Mobile menu button */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Abrir menú"
+            className="p-1.5 text-white hover:text-[#f3dc99] transition-colors"
+          >
+            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div className="md:hidden mt-2 max-w-5xl mx-auto pointer-events-auto bg-[#85984e] text-white rounded-2xl p-5 shadow-xl border border-white/20 animate-fadeIn space-y-3">
+          <a
+            href="#sobre-mi"
+            onClick={handleAboutClick}
+            className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
+          >
+            Sobre mí
+          </a>
+          <a
+            href="#/blog"
+            onClick={(e) => handleLinkClick(e, 'blog')}
+            className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
+          >
+            Blog
+          </a>
+          <a
+            href="#/proyectos"
+            onClick={(e) => handleLinkClick(e, 'proyectos')}
+            className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
+          >
+            Proyectos
+          </a>
+          <a
+            href="#/skills"
+            onClick={(e) => handleLinkClick(e, 'skills')}
+            className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
+          >
+            Skills
+          </a>
+          <div className="pt-3 border-t border-white/25 flex items-center gap-5">
+            <a href="mailto:contacto@merly.dev" className="text-white hover:text-[#f3dc99]">
+              <Mail size={22} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#f3dc99]">
+              <Linkedin size={22} />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#f3dc99]">
+              <Github size={22} />
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
