@@ -9,9 +9,11 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { SkillsPage } from './pages/SkillsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { BlogDetailPage } from './pages/BlogDetailPage';
+import { CompetitionDetailPage } from './pages/CompetitionDetailPage';
 import { LoadingScreen } from './components/LoadingScreen';
 import { PROJECTS_DATA } from './data/projects';
 import { BLOGS_DATA } from './data/blogs';
+import { COMPETITIONS_DATA } from './data/competitions';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +26,10 @@ function App() {
     if (raw.startsWith('articulo/')) {
       const id = raw.replace('articulo/', '');
       return { route: 'articulo-detalle', id };
+    }
+    if (raw.startsWith('competencia/')) {
+      const id = raw.replace('competencia/', '');
+      return { route: 'competencia-detalle', id };
     }
     if (raw === 'blog') return { route: 'blog', id: null };
     if (raw === 'proyectos') return { route: 'proyectos', id: null };
@@ -39,6 +45,9 @@ function App() {
   const [selectedPostId, setSelectedPostId] = useState<string | null>(
     initialParsed.route === 'articulo-detalle' ? initialParsed.id : null
   );
+  const [selectedCompetitionId, setSelectedCompetitionId] = useState<string | null>(
+    initialParsed.route === 'competencia-detalle' ? initialParsed.id : null
+  );
 
   const navigate = (route: PageRoute, itemId?: string) => {
     setCurrentRoute(route);
@@ -48,6 +57,9 @@ function App() {
     } else if (route === 'articulo-detalle' && itemId) {
       setSelectedPostId(itemId);
       window.location.hash = `/articulo/${itemId}`;
+    } else if (route === 'competencia-detalle' && itemId) {
+      setSelectedCompetitionId(itemId);
+      window.location.hash = `/competencia/${itemId}`;
     } else if (route === 'home') {
       window.location.hash = '/';
     } else {
@@ -80,6 +92,9 @@ function App() {
       if (parsed.route === 'articulo-detalle' && parsed.id) {
         setSelectedPostId(parsed.id);
       }
+      if (parsed.route === 'competencia-detalle' && parsed.id) {
+        setSelectedCompetitionId(parsed.id);
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     window.addEventListener('hashchange', handleHashChange);
@@ -109,6 +124,7 @@ function App() {
             onNavigateProjects={() => navigate('proyectos')}
             onSelectProject={(id) => navigate('proyecto-detalle', id)}
             onSelectPost={(id) => navigate('articulo-detalle', id)}
+            onSelectCompetition={(id) => navigate('competencia-detalle', id)}
           />
         )}
         {currentRoute === 'blog' && (
@@ -138,6 +154,13 @@ function App() {
             postId={selectedPostId || BLOGS_DATA[0].id}
             onBack={() => navigate('blog')}
             onSelectOtherPost={(id) => navigate('articulo-detalle', id)}
+          />
+        )}
+        {currentRoute === 'competencia-detalle' && (
+          <CompetitionDetailPage
+            competitionId={selectedCompetitionId || COMPETITIONS_DATA[0].id}
+            onBack={() => handleScrollToSection('competencias')}
+            onSelectOtherCompetition={(id) => navigate('competencia-detalle', id)}
           />
         )}
       </main>

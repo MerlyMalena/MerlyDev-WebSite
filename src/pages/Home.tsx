@@ -3,6 +3,7 @@ import { Hero } from '../components/Hero';
 import { About } from '../components/About';
 import { BlogPreview } from '../components/BlogPreview';
 import { ProjectsPreview } from '../components/ProjectsPreview';
+import { CompetitionsCarousel } from '../components/CompetitionsCarousel';
 import { Skills } from '../components/Skills';
 import { Contact } from '../components/Contact';
 
@@ -11,6 +12,7 @@ interface HomeProps {
   onNavigateProjects: () => void;
   onSelectProject: (id: string) => void;
   onSelectPost: (id: string) => void;
+  onSelectCompetition: (id: string) => void;
 }
 
 export const Home: React.FC<HomeProps> = ({
@@ -18,6 +20,7 @@ export const Home: React.FC<HomeProps> = ({
   onNavigateProjects,
   onSelectProject,
   onSelectPost,
+  onSelectCompetition,
 }) => {
   return (
     <>
@@ -33,10 +36,13 @@ export const Home: React.FC<HomeProps> = ({
       {/* 4. Portafolio: 3 proyectos más destacados con navegación a página de detalle */}
       <ProjectsPreview onViewAll={onNavigateProjects} onSelectProject={onSelectProject} />
 
-      {/* 5. Skills: Todos */}
+      {/* 5. Hackatones & Competencias: carrusel automático con 10s */}
+      <CompetitionsCarousel onSelectCompetition={onSelectCompetition} />
+
+      {/* 6. Skills: Todos */}
       <Skills />
 
-      {/* 6. Contacto */}
+      {/* 7. Contacto */}
       <Contact />
     </>
   );

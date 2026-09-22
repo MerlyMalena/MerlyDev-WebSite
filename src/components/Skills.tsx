@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Code2, Database, GitBranch, Cloud } from 'lucide-react';
+import { Sparkles, Code2, Database, GitBranch, Cloud, Coffee } from 'lucide-react';
 import { HoneycombIcon } from './HoneycombIcon';
 
 interface SkillItem {
   name: string;
-  level: 'Avanzado' | 'Intermedio' | 'Principiante';
+  level: 'Avanzado' | 'Intermedio' | 'Principiante' | 'Básico';
   icon: React.ReactNode;
   percentage: number;
 }
@@ -16,6 +16,12 @@ const SKILLS_LIST: SkillItem[] = [
     level: 'Avanzado',
     icon: <Code2 size={20} className="text-[#85984e]" />,
     percentage: 90,
+  },
+  {
+    name: 'Java',
+    level: 'Básico',
+    icon: <Coffee size={20} className="text-[#85984e]" />,
+    percentage: 45,
   },
   {
     name: 'SQL Server',

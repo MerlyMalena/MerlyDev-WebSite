@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Linkedin, Github, Menu, X } from 'lucide-react';
 import { HoneycombIcon } from './HoneycombIcon';
 
-export type PageRoute = 'home' | 'blog' | 'proyectos' | 'skills' | 'proyecto-detalle' | 'articulo-detalle';
+export type PageRoute = 'home' | 'blog' | 'proyectos' | 'skills' | 'proyecto-detalle' | 'articulo-detalle' | 'competencia-detalle';
 
 interface NavbarProps {
   currentRoute?: PageRoute;
@@ -72,6 +72,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute: _currentRoute = 'h
             className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
           >
             Proyectos
+          </a>
+          <a
+            href="#competencias"
+            onClick={(e) => handleSectionClick(e, 'competencias')}
+            className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
+          >
+            Competencias
           </a>
           <a
             href="#skills"
@@ -146,6 +153,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute: _currentRoute = 'h
             className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
           >
             Proyectos
+          </a>
+          <a
+            href="#competencias"
+            onClick={(e) => handleSectionClick(e, 'competencias')}
+            className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
+          >
+            Competencias
           </a>
           <a
             href="#skills"
