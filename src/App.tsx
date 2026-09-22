@@ -9,10 +9,12 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { SkillsPage } from './pages/SkillsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { BlogDetailPage } from './pages/BlogDetailPage';
+import { LoadingScreen } from './components/LoadingScreen';
 import { PROJECTS_DATA } from './data/projects';
 import { BLOGS_DATA } from './data/blogs';
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const parseHash = (): { route: PageRoute; id: string | null } => {
     const raw = window.location.hash.replace(/^#\/?/, '');
     if (raw.startsWith('proyecto/')) {
@@ -86,6 +88,9 @@ function App() {
 
   return (
     <div className="min-h-screen text-[#323e11] flex flex-col font-serif relative">
+      {/* Loading Screen: Honeycomb cell with white background */}
+      {loading && <LoadingScreen onLoaded={() => setLoading(false)} />}
+
       {/* Watercolor Meadow Landscape Background */}
       <WatercolorBackground />
 
