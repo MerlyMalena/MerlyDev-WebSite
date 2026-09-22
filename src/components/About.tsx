@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { HoneycombIcon } from './HoneycombIcon';
 
+// Ruta de tu foto en la carpeta public/images/
+const PROFILE_IMAGE = '/images/Me.jpg';
+
 export const About: React.FC = () => {
   return (
     <section id="sobre-mi" className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 relative font-serif scroll-mt-24">
@@ -17,19 +20,30 @@ export const About: React.FC = () => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Card: Mindset & Identity */}
-            <div className="lg:col-span-5 bg-[#85984e] text-white rounded-[28px] p-7 sm:p-8 shadow-md relative overflow-hidden">
-              <div className="flex items-center justify-between mb-6">
-                <HoneycombIcon className="w-9 h-9" />
+            <div className="lg:col-span-5 bg-[#85984e] text-white rounded-[28px] p-6 sm:p-7 shadow-md relative overflow-hidden flex flex-col justify-between">
+              <div className="flex items-center justify-between mb-3">
+                <HoneycombIcon className="w-8 h-8" />
                 <span className="text-xs font-mono uppercase tracking-widest text-[#f3dc99]">
                   // developer bio
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold leading-snug">
-                "Creando código con el cuidado y dedicación de una colmena."
-              </h3>
+              {/* Foto de Merly (En lugar de la frase anterior) */}
+              <div className="my-2 relative w-full h-64 sm:h-72 rounded-[22px] overflow-hidden border-2 border-white/25 shadow-md bg-[#323e11]/25 group">
+                <img
+                  src={PROFILE_IMAGE}
+                  alt="Merly"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    // Fallback estético si aún no se ha colocado /images/merly.jpg
+                    e.currentTarget.src =
+                      '../../public/images/competencias/Me.jpg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#323e11]/35 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-              <div className="mt-8 pt-6 border-t border-white/25 flex items-center gap-3.5">
+              <div className="pt-4 border-t border-white/25 flex items-center gap-3.5">
                 <div className="w-11 h-11 rounded-full bg-[#f3dc99] text-[#323e11] flex items-center justify-center font-bold text-lg">
                   🐝
                 </div>
@@ -48,15 +62,15 @@ export const About: React.FC = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-bold text-[#6c7c39] leading-tight">
-                Construyendo soluciones digitales pensadas, ordenadas y vivas.
+               Construyendo soluciones eficientes para los retos de hoy.
               </h2>
 
               <p className="text-base sm:text-lg text-[#323e11]/85 leading-relaxed font-sans">
-                ¡Hola! Soy Merly. Me fascina crear software que no solo funcione a la perfección, sino que se sienta cálido, intuitivo y estéticamente agradable. Mi especialidad se centra en el ecosistema de <strong>React, TypeScript y arquitecturas limpias</strong>.
+              ¡Hola! Soy Merly Malena, estudiante de software en el ITLA. Me fascina el desarrollo de sistemas que resuelvan problemas reales mediante lógica estructurada, optimización de recursos y un funcionamiento impecable.
               </p>
 
               <p className="text-base text-[#323e11]/85 leading-relaxed font-sans">
-                Al igual que el proceso natural de una abeja que construye su colmena celda por celda, desarrollo cada proyecto cuidando la estructura, la legibilidad y la experiencia de quien lo utiliza.
+               Como estudiante de desarrollo de software en el ITLA, me encuentro en constante aprendizaje, enfocándome principalmente en la gestión de bases de datos y la infraestructura en la nube para crear proyectos eficientes y preparados para el futuro.
               </p>
             </div>
           </div>
