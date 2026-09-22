@@ -43,7 +43,7 @@ No se trata de animar todo en la pantalla, sino de premiar la curiosidad del usu
     date: '28 Ago 2026',
     readTime: '6 min de lectura',
     tags: ['TypeScript', 'Desarrollo', 'Buenas Prácticas'],
-    coverImage: 'https://images.unsplash.com/photo-1516116211227-bbc13c7a5223?auto=format&fit=crop&w=1000&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=80',
     content: `Escribir código con \`strict: true\` en TypeScript puede sentirse desafiante al inicio, pero es la mejor inversión para cualquier proyecto a largo plazo.
 
 ### Errores en tiempo de compilación vs. en tiempo de ejecución

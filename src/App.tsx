@@ -56,16 +56,16 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleScrollToAbout = () => {
+  const handleScrollToSection = (sectionId: string) => {
     if (currentRoute !== 'home') {
       setCurrentRoute('home');
       window.location.hash = '/';
       setTimeout(() => {
-        const el = document.getElementById('sobre-mi');
+        const el = document.getElementById(sectionId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      }, 150);
     } else {
-      const el = document.getElementById('sobre-mi');
+      const el = document.getElementById(sectionId);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
@@ -98,7 +98,7 @@ function App() {
       <Navbar
         currentRoute={currentRoute}
         onNavigate={navigate}
-        onScrollToAbout={handleScrollToAbout}
+        onScrollToSection={handleScrollToSection}
       />
 
       {/* Main Content: Home vs Dedicated Pages */}

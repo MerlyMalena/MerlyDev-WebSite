@@ -5,8 +5,8 @@ import { HoneycombIcon } from './HoneycombIcon';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre-mi" className="py-20 px-4 sm:px-6 relative font-serif">
-      <div className="max-w-5xl mx-auto">
+    <section id="sobre-mi" className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 relative font-serif scroll-mt-24">
+      <div className="w-full max-w-5xl mx-auto">
         {/* Main Card Only (Sin los 3 bloques inferiores) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

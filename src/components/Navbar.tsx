@@ -7,10 +7,10 @@ export type PageRoute = 'home' | 'blog' | 'proyectos' | 'skills' | 'proyecto-det
 interface NavbarProps {
   currentRoute?: PageRoute;
   onNavigate?: (route: PageRoute) => void;
-  onScrollToAbout?: () => void;
+  onScrollToSection?: (sectionId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigate, onScrollToAbout }) => {
+export const Navbar: React.FC<NavbarProps> = ({ currentRoute: _currentRoute = 'home', onNavigate, onScrollToSection }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLinkClick = (e: React.MouseEvent, route: PageRoute) => {
@@ -24,13 +24,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigat
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleAboutClick = (e: React.MouseEvent) => {
+  const handleSectionClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     setMobileOpen(false);
-    if (onScrollToAbout) {
-      onScrollToAbout();
+    if (onScrollToSection) {
+      onScrollToSection(sectionId);
     } else {
-      const target = document.getElementById('sobre-mi');
+      const target = document.getElementById(sectionId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
@@ -40,54 +40,43 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigat
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 sm:pt-6 pointer-events-none font-serif">
       <header className="max-w-5xl mx-auto pointer-events-auto bg-[#85984e] text-white rounded-[26px] shadow-lg shadow-[#85984e]/20 px-6 sm:px-8 py-3.5 flex items-center justify-between transition-all">
-        {/* Logo Left: Honeycomb + MerlyDev -> Leads to Home */}
+        {/* Logo Left: Honeycomb + MerlyDev -> Leads to Home Top */}
         <a
           href="#/"
           onClick={(e) => handleLinkClick(e, 'home')}
           className="flex items-center gap-2.5 text-xl sm:text-2xl font-serif font-bold tracking-normal text-white hover:opacity-90 transition-opacity"
         >
-          <HoneycombIcon className="w-8 h-8 drop-shadow-xs" />
+          <HoneycombIcon className="w-8 h-8 drop-shadow-xs text-white" />
           <span>MerlyDev</span>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation: Va a las secciones en la misma página */}
         <nav className="hidden md:flex items-center gap-7">
-          {/* Sobre mí va solo en el inicio con scroll suave */}
           <a
             href="#sobre-mi"
-            onClick={handleAboutClick}
+            onClick={(e) => handleSectionClick(e, 'sobre-mi')}
             className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
           >
             Sobre mí
           </a>
           <a
-            href="#/blog"
-            onClick={(e) => handleLinkClick(e, 'blog')}
-            className={`text-base font-serif font-bold transition-colors ${
-              currentRoute === 'blog' || currentRoute === 'articulo-detalle'
-                ? 'text-[#f3dc99] underline underline-offset-4'
-                : 'text-white hover:text-[#f3dc99]'
-            }`}
+            href="#blog"
+            onClick={(e) => handleSectionClick(e, 'blog')}
+            className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
           >
             Blog
           </a>
           <a
-            href="#/proyectos"
-            onClick={(e) => handleLinkClick(e, 'proyectos')}
-            className={`text-base font-serif font-bold transition-colors ${
-              currentRoute === 'proyectos' || currentRoute === 'proyecto-detalle'
-                ? 'text-[#f3dc99] underline underline-offset-4'
-                : 'text-white hover:text-[#f3dc99]'
-            }`}
+            href="#proyectos"
+            onClick={(e) => handleSectionClick(e, 'proyectos')}
+            className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
           >
             Proyectos
           </a>
           <a
-            href="#/skills"
-            onClick={(e) => handleLinkClick(e, 'skills')}
-            className={`text-base font-serif font-bold transition-colors ${
-              currentRoute === 'skills' ? 'text-[#f3dc99] underline underline-offset-4' : 'text-white hover:text-[#f3dc99]'
-            }`}
+            href="#skills"
+            onClick={(e) => handleSectionClick(e, 'skills')}
+            className="text-base font-serif font-bold text-white hover:text-[#f3dc99] transition-colors"
           >
             Skills
           </a>
@@ -111,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigat
               <Linkedin size={22} strokeWidth={2.2} />
             </a>
             <a
-              href="https://github.com/MerlyMalena"
+              href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -139,28 +128,28 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute = 'home', onNavigat
         <div className="md:hidden mt-2 max-w-5xl mx-auto pointer-events-auto bg-[#85984e] text-white rounded-2xl p-5 shadow-xl border border-white/20 animate-fadeIn space-y-3">
           <a
             href="#sobre-mi"
-            onClick={handleAboutClick}
+            onClick={(e) => handleSectionClick(e, 'sobre-mi')}
             className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
           >
             Sobre mí
           </a>
           <a
-            href="#/blog"
-            onClick={(e) => handleLinkClick(e, 'blog')}
+            href="#blog"
+            onClick={(e) => handleSectionClick(e, 'blog')}
             className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
           >
             Blog
           </a>
           <a
-            href="#/proyectos"
-            onClick={(e) => handleLinkClick(e, 'proyectos')}
+            href="#proyectos"
+            onClick={(e) => handleSectionClick(e, 'proyectos')}
             className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
           >
             Proyectos
           </a>
           <a
-            href="#/skills"
-            onClick={(e) => handleLinkClick(e, 'skills')}
+            href="#skills"
+            onClick={(e) => handleSectionClick(e, 'skills')}
             className="block text-lg font-serif font-bold text-white hover:text-[#f3dc99] py-1"
           >
             Skills
