@@ -17,21 +17,15 @@ export const COMPETITIONS_DATA: Competition[] = [
     award: '🏆 2do Lugar - Eje de Economía de Triple Impacto',
     date: 'Mayo 2026',
     location: 'Santo Domingo',
-    shortDescription: 'Diseño e implementación de una plataforma de ayuda comunitaria en tiempo real con arquitectura escalable y backend en C#.',
-    fullDescription: `Durante un intenso sprint de 48 horas sin descanso, nuestro equipo ideó, estructuró y programó una solución digital orientada a optimizar la distribución de recursos y donaciones comunitarias ante situaciones de emergencia.
-
-El principal reto técnico consistió en diseñar una base de datos relacional robusta en SQL Server capaz de manejar transacciones concurrentes con alta disponibilidad, junto a una API REST en C# .NET y un frontend reactivo.
-
-Nuestra propuesta fue seleccionada como la ganadora unánime por el panel de jueces debido a su viabilidad técnica, arquitectura limpia y el impacto social directo en comunidades vulnerables.`,
-    projectBuilt: 'ColmenaSolidaria',
+    shortDescription: 'Desarrollo de un sistema de drenaje para la prevención en caso de inundaciones.',
+    fullDescription: ``,
+    projectBuilt: 'AquaShield',
     projectSummary: 'Plataforma web con mapa interactivo y gestión de inventario para bancos de alimentos comunitarios.',
     tags: ['C#', '.NET', 'SQL Server', 'React', 'Arquitectura Limpia'],
     image: '/images/competencias/Defensordelpueblo-Mecaflow.jpg',
     highlights: [
-      'Primer lugar obtenido entre más de 35 equipos universitarios y profesionales.',
-      'Modelado de base de datos relacional normalizada y optimizada para altas cargas en SQL Server.',
-      'Desarrollo de API segura con autenticación por tokens y validación estricta de esquemas.',
-      'Pitch técnico final de 5 minutos ante jurados expertos de la industria tech.'
+      'Segundo lugar obtenido entre más de 20 equipos universitarios y profesionales.',
+      'Pitch técnico final de 5 minutos ante jurados expertos'
     ],
     githubUrl: 'https://github.com',
     liveUrl: '#'
@@ -49,7 +43,7 @@ Nuestra propuesta fue seleccionada como la ganadora unánime por el panel de jue
 
 Se evaluó la eficiencia asintótica de las soluciones (notación Big-O), el dominio de colecciones genéricas de C#, algoritmos de búsqueda y ordenamiento avanzado, así como la prevención de excepciones en tiempo de ejecución.
 
-Logré resolver 7 de 8 retos algorítmicos complejos en el menor tiempo registrado, asegurando la segunda posición nacional.`,
+Logré resolver 2 de 8 retos algorítmicos complejos en el menor tiempo registrado`,
     projectBuilt: 'GraphOptimizer C#',
     projectSummary: 'Suite de algoritmos de optimización de rutas y análisis de árboles de expansión mínima.',
     tags: ['C#', 'Algoritmos', 'Estructuras de Datos', 'Big-O', 'Optimización'],

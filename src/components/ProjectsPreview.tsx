@@ -62,8 +62,8 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({ onViewAll, onS
             </a>
           </div>
 
-          {/* 3 Projects Grid - Divs idénticos a los artículos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Projects Grid */}
+          <div className={`grid gap-5 ${featuredProjects.length === 1 ? 'max-w-md mx-auto grid-cols-1' : featuredProjects.length === 2 ? 'max-w-2xl mx-auto grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
             {featuredProjects.map((project) => (
               <motion.article
                 key={project.id}

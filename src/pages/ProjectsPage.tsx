@@ -100,7 +100,14 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigateHome, onSe
             </button>
           </div>
         ) : (
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            layout
+            className={`grid gap-8 ${
+              filteredProjects.length === 1
+                ? 'max-w-xl mx-auto grid-cols-1 w-full'
+                : 'grid-cols-1 md:grid-cols-2'
+            }`}
+          >
             <AnimatePresence>
               {filteredProjects.map((project) => (
                 <motion.div

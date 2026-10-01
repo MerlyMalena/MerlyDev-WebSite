@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Navbar, PageRoute } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { AudioPlayer } from './components/AudioPlayer';
 import { WatercolorBackground } from './components/WatercolorBackground';
 import { Home } from './pages/Home';
 import { BlogPage } from './pages/BlogPage';
@@ -166,9 +165,6 @@ function App() {
       </main>
 
       <Footer />
-
-      {/* Permanent, Smooth Background Lo-Fi Player */}
-      <AudioPlayer />
     </div>
   );
 }

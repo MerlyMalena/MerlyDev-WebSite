@@ -5,41 +5,41 @@ import { HoneycombIcon } from './HoneycombIcon';
 
 interface SkillItem {
   name: string;
-  level: 'Avanzado' | 'Intermedio' | 'Principiante' | 'Básico';
+  category: string;
   icon: React.ReactNode;
-  percentage: number;
+  tags: string[];
 }
 
 const SKILLS_LIST: SkillItem[] = [
   {
-    name: 'C#',
-    level: 'Avanzado',
+    name: 'C# / .NET',
+    category: 'Especialidad Principal',
     icon: <Code2 size={20} className="text-[#85984e]" />,
-    percentage: 90,
-  },
-  {
-    name: 'Java',
-    level: 'Básico',
-    icon: <Coffee size={20} className="text-[#85984e]" />,
-    percentage: 45,
+    tags: ['ASP.NET Core', 'EF Core', 'LINQ', 'REST APIs'],
   },
   {
     name: 'SQL Server',
-    level: 'Intermedio',
+    category: 'Bases de Datos',
     icon: <Database size={20} className="text-[#85984e]" />,
-    percentage: 70,
+    tags: ['T-SQL', 'Modelado Relacional', 'Consultas & Índices'],
   },
   {
-    name: 'Git',
-    level: 'Intermedio',
+    name: 'Git & GitHub',
+    category: 'Control de Versiones',
     icon: <GitBranch size={20} className="text-[#85984e]" />,
-    percentage: 70,
+    tags: ['Gitflow'],
   },
-  {
-    name: 'Cloud',
-    level: 'Principiante',
+{
+    name: 'Java',
+    category: 'Desarrollo de Software',
+    icon: <Coffee size={20} className="text-[#85984e]" />,
+    tags: ['POO', 'Java Swing / GUI', 'Arquitectura MVC', 'JDBC'],
+  },
+{
+    name: 'Cloud & Azure',
+    category: 'Infraestructura & Nube',
     icon: <Cloud size={20} className="text-[#85984e]" />,
-    percentage: 40,
+    tags: ['Azure Fundamentals', 'Azure SQL (DP-300 Prep)', 'Docker Basics'],
   },
 ];
 
@@ -71,7 +71,7 @@ export const Skills: React.FC = () => {
                 </h3>
 
                 <p className="mt-4 text-xs sm:text-sm text-white/85 font-sans leading-relaxed">
-                  Enfoque en desarrollo backend y bases de datos relacionales, complementado con control de versiones y fundamentos de infraestructura en la nube.
+                  Enfoque en desarrollo backend con el ecosistema .NET y bases de datos relacionales, complementado con control de versiones y fundamentos de infraestructura en la nube.
                 </p>
               </div>
 
@@ -99,7 +99,7 @@ export const Skills: React.FC = () => {
                 </h2>
 
                 <p className="text-sm text-[#323e11]/80 font-sans mt-1">
-                  Mi conjunto de competencias técnicas clave y nivel de dominio:
+                  Herramientas, frameworks y tecnologías con las que construyo soluciones:
                 </p>
               </div>
 
@@ -112,7 +112,7 @@ export const Skills: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    className="p-4 rounded-[22px] bg-[#FAF8F2] border-2 border-[#85984e]/30 shadow-xs hover:border-[#85984e] hover:shadow-md transition-all space-y-2 group"
+                    className="p-4 rounded-[22px] bg-[#FAF8F2] border-2 border-[#85984e]/30 shadow-xs hover:border-[#85984e] hover:shadow-md transition-all space-y-3 group"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -124,32 +124,22 @@ export const Skills: React.FC = () => {
                         </span>
                       </div>
 
-                      {/* Level Badge */}
-                      <span
-                        className={`text-xs font-bold px-3.5 py-1 rounded-full font-sans shadow-xs ${
-                          skill.level === 'Avanzado'
-                            ? 'bg-[#85984e] text-white'
-                            : skill.level === 'Intermedio'
-                            ? 'bg-[#e59828] text-white'
-                            : 'bg-[#cbd99e] text-[#323e11] border border-[#85984e]/30'
-                        }`}
-                      >
-                        {skill.level}
+                      {/* Category Badge */}
+                      <span className="text-[11px] font-semibold px-3 py-1 rounded-full font-sans bg-[#cbd99e]/40 text-[#323e11] border border-[#85984e]/30">
+                        {skill.category}
                       </span>
                     </div>
 
-                    {/* Progress Bar */}
-                    <div className="w-full h-1.5 bg-[#cbd99e]/30 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full rounded-full transition-all duration-700 ${
-                          skill.level === 'Avanzado'
-                            ? 'bg-[#85984e]'
-                            : skill.level === 'Intermedio'
-                            ? 'bg-[#e59828]'
-                            : 'bg-[#85984e]/60'
-                        }`}
-                        style={{ width: `${skill.percentage}%` }}
-                      />
+                    {/* Skill Tags */}
+                    <div className="flex flex-wrap gap-1.5 pt-0.5">
+                      {skill.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-md bg-white border border-[#85984e]/20 text-[#4c5825]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </motion.div>
                 ))}

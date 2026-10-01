@@ -91,15 +91,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="p-5 rounded-2xl bg-[#cbd99e]/30 border-2 border-[#85984e]/30">
                 <h3 className="text-sm font-bold text-[#6c7c39] uppercase tracking-wider mb-3 flex items-center gap-2">
                   <CheckCircle2 size={16} className="text-[#85984e]" />
-                  Aspectos Destacados & Arquitectura
+                  {project.highlightsTitle || 'Aspectos Destacados & Arquitectura'}
                 </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-sans">
-                  {project.highlights.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2 text-xs sm:text-sm text-[#323e11]">
-                      <span className="text-[#85984e] font-bold mt-0.5">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                  {project.highlights.map((item, index) => {
+                    const colonIdx = item.indexOf(':');
+                    return (
+                      <li key={index} className="flex items-start gap-2 text-xs sm:text-sm text-[#323e11]">
+                        <span className="text-[#85984e] font-bold mt-0.5">•</span>
+                        {colonIdx !== -1 ? (
+                          <span>
+                            <strong className="font-bold text-[#323e11]">{item.slice(0, colonIdx + 1)}</strong>
+                            {item.slice(colonIdx + 1)}
+                          </span>
+                        ) : (
+                          <span>{item}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}

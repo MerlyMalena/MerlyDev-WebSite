@@ -1,63 +1,177 @@
-# ✨ MerlyDev — Sitio Web y Portafolio Creativo
+<div align="center">
 
-Espacio web personal moderno, interactivo y organizado, diseñado con **React 18**, **TypeScript**, **Vite**, **Tailwind CSS** y **Framer Motion**.
+  # 🍯 `MerlyDev`
+  ### *Construyendo soluciones digitales pensadas, ordenadas y vivas — celda a celda.*
+
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Honeybee.png" alt="Honeybee" width="70" height="70" />
+  </p>
+
+  <p align="center">
+    <strong>Portafolio personal interactivo inspirado en la armonía natural de una colmena y paisajes en acuarela.</strong>
+  </p>
+
+  <p align="center">
+    <a href="#-características">Características</a> •
+    <a href="#-stack-tecnológico">Stack Tecnológico</a> •
+    <a href="#-secciones">Secciones</a> •
+    <a href="#-instalación-y-uso">Instalación</a> •
+    <a href="#-estructura">Estructura</a> •
+    <a href="#-contacto">Contacto</a>
+  </p>
+
+  <!-- Badges con la paleta de colores del portafolio (#85984e, #e59828, #323e11) -->
+  <p align="center">
+    <img src="https://img.shields.io/badge/React_18-85984e?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-323e11?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-e59828?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Framer_Motion-6c7c39?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/Vite-f3dc99?style=for-the-badge&logo=vite&logoColor=323e11" alt="Vite" />
+  </p>
+
+</div>
 
 ---
 
-## 🚀 Comandos Rápidos
+> 🐝 *"Al igual que el proceso natural de una abeja que construye su colmena celda por celda, desarrollo cada proyecto cuidando la estructura, la legibilidad y la experiencia de quien lo utiliza."*
+
+---
+
+## 🌻 Características Principales
+
+- 🎨 **Estética Visual Cálida y Única:** Fondo paisajístico en acuarela (*Watercolor Meadow*), marcos hexagonales dorados y una paleta inspirada en verde oliva, salvia, miel y bosque.
+- ⏳ **Pantalla de Carga Temática:** Celda de colmena animada con la frase *"Cargando ideas..."*.
+- 🐝 **Hero Interactivo:** Abeja en *Pixel Art* animada con efecto de escritura tipo terminal consola (`> MerlyDev.init()`).
+- 🏆 **Carrusel de Retos & Hackatones:** 
+  - Ciclo automático de 10 segundos con transición suave en *fade* y barra de progreso dorada.
+  - Marco fotográfico en forma de celda hexagonal con efecto zoom.
+  - Créditos a entidades organizadoras, nombre de equipo (*Mecaflow*, *Equipo Pulse*) y cantidad de participantes.
+- 📄 **Páginas de Detalle Dedicadas:** Vistas completas e independientes para Proyectos, Artículos del Blog y Competencias (con lista individual de integrantes y reconocimientos).
+- 🎵 **Reproductor Lo-Fi Integrado:** Música ambiental relajante permanente con controles de audio accesibles.
+- 📱 **Diseño 100% Responsivo:** Adaptado con precisión milimétrica para móviles, tablets y monitores ultrawide.
+- ⚡ **Rendimiento Ultrarrápido:** Compilado con Vite, TypeScript estricto y animaciones fluidas a 60 FPS con Framer Motion.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Capa | Tecnologías |
+| :--- | :--- |
+| **Frontend Framework** | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
+| **Estilos & UI** | [Tailwind CSS](https://tailwindcss.com/) + CSS Grid + SVG Shapes |
+| **Animaciones & Transiciones** | [Framer Motion](https://www.framer.com/motion/) |
+| **Iconografía** | [Lucide React](https://lucide.dev/) |
+| **Bundler & Tooling** | [Vite](https://vitejs.dev/) + PostCSS + ESLint |
+| **Música & Audio** | HTML5 Audio API con estado persistente |
+
+---
+
+## 🧭 Secciones de la Colmena
+
+```text
+🍯 MerlyDev
+ ├── 1. 🐝 Inicio (Hero)               ──> Comando terminal interactivo & Pixel Bee
+ ├── 2. 📖 Sobre Mí (About)            ──> Tarjeta de identidad, bio y fotografía
+ ├── 3. ✍️ Blog & Publicaciones        ──> Artículos técnicos con páginas de lectura
+ ├── 4. 💻 Portafolio de Proyectos     ──> Catálogo con filtros y vistas detalladas
+ ├── 5. 🏆 Hackatones & Competencias   ──> Carrusel hexagonal & fichas de retos y equipos
+ ├── 6. ⚡ Habilidades Técnicas        ──> Dominio en C#, Java, SQL Server, Git y Cloud
+ └── 7. 📬 Contacto & Redes            ──> Canales directos y formulario
+```
+
+---
+
+## 💻 Instalación y Uso Local
+
+Sigue estos sencillos pasos para clonar y ejecutar el proyecto en tu máquina:
 
 ```bash
-# Iniciar servidor de desarrollo en local
-npm run dev
+# 1. Clona el repositorio
+git clone https://github.com/tu-usuario/MerlyDev.git
 
-# Compilar para producción
+# 2. Entra en la carpeta del proyecto
+cd MerlyDev
+
+# 3. Instala las dependencias necesarias
+npm install
+
+# 4. Inicia el servidor de desarrollo
+npm run dev
+```
+
+Abre tu navegador en:
+👉 `http://localhost:5173/`
+
+### 📦 Otros Comandos
+
+```bash
+# Compilar para producción (TypeScript + Vite)
 npm run build
 
-# Previsualizar la compilación de producción
+# Previsualizar el resultado de producción
 npm run preview
 ```
 
 ---
 
-## 📁 Cómo Organizar y Subir Nuevos Proyectos
+##  Estructura del Código
 
-Todo el contenido del portafolio está **desacoplado de la interfaz**, lo que te permite actualizarlo sin necesidad de modificar el código visual:
-
-1. Abre el archivo [`src/data/projects.ts`](./src/data/projects.ts).
-2. Añade un nuevo bloque con los datos de tu proyecto siguiendo la interfaz:
-
-```typescript
-{
-  id: 'mi-nuevo-proyecto',
-  title: 'Nombre de tu Proyecto',
-  shortDescription: 'Descripción breve para la tarjeta principal.',
-  fullDescription: 'Descripción detallada que aparecerá al abrir el modal.',
-  category: 'frontend', // Opciones: 'frontend' | 'fullstack' | 'mobile' | 'tools'
-  image: 'https://...', // URL de imagen o captura
-  tags: ['React', 'TypeScript', 'Tailwind CSS'],
-  githubUrl: 'https://github.com/tu-usuario/tu-repo',
-  liveUrl: 'https://tu-demo.vercel.app',
-  featured: true,
-  date: '2026',
-  highlights: [
-    'Punto destacado 1',
-    'Punto destacado 2'
-  ]
-}
+```text
+MerlyDev/
+├── public/
+│   └── images/                     # 📸 Imágenes locales del portafolio
+│       ├── competencias/           # Fotos de hackatones (Defensor del Pueblo, etc.)
+│       ├── proyectos/              # Capturas de tus proyectos
+│       └── merly.jpg               # Tu foto de perfil en "Sobre Mí"
+├── src/
+│   ├── components/                 # Componentes visuales modulares
+│   │   ├── About.tsx               # Tarjeta bio + foto
+│   │   ├── AudioPlayer.tsx         # Reproductor de música Lo-Fi
+│   │   ├── CompetitionsCarousel.tsx# Carrusel de competencias con celda hexagonal
+│   │   ├── Hero.tsx                # Hero con PixelBee y efecto terminal
+│   │   ├── HoneycombIcon.tsx       # Icono SVG de celda de colmena
+│   │   ├── LoadingScreen.tsx       # Pantalla de carga animada
+│   │   ├── Navbar.tsx              # Barra de navegación flotante in-page
+│   │   └── Skills.tsx              # Lista de habilidades técnicas
+│   ├── data/                       # 🗃️ Datos desacoplados (fácil de editar)
+│   │   ├── blogs.ts                # Artículos y publicaciones
+│   │   ├── competitions.ts         # Hackatones, equipos y premios
+│   │   └── projects.ts             # Proyectos de portafolio
+│   ├── pages/                      # Páginas y vistas completas
+│   │   ├── Home.tsx                # Página principal
+│   │   ├── BlogDetailPage.tsx      # Lectura de artículo
+│   │   ├── CompetitionDetailPage.tsx # Vista de reto, equipo y reconocimientos
+│   │   └── ProjectDetailPage.tsx   # Ficha completa del proyecto
+│   ├── types/                      # Definiciones de TypeScript
+│   └── App.tsx                     # Enrutador hash y estructura global
 ```
 
 ---
 
-## 🛠️ Cómo Actualizar Habilidades (Tech Stack)
+## 🚀 Despliegue en Producción (Vercel / Netlify / GitHub Pages)
 
-Abre [`src/data/skills.ts`](./src/data/skills.ts) y edita o agrega tus tecnologías por categoría (*Frontend*, *Backend*, *Bases de Datos*, *Herramientas*).
+Este proyecto está optimizado con **enrutamiento por Hash** (`#/`), lo que garantiza que nunca tendrás errores `404 Not Found` al refrescar o recargar en servidores estáticos:
+
+1. Conecta tu repositorio de GitHub a [Vercel](https://vercel.com/) o [Netlify](https://www.netlify.com/).
+2. El sistema detectará automáticamente la configuración:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+3. ¡Listo! Tu portafolio estará online con certificado SSL gratuito y despliegues automáticos en cada `git push`.
 
 ---
 
-## 🌐 Cómo Desplegar Gratis en Vercel
+## 📬 Contacto & Conexión
 
-1. Sube tu código a un repositorio en **GitHub**.
-2. Ve a [Vercel.com](https://vercel.com) e inicia sesión con tu cuenta de GitHub.
-3. Haz clic en **"Add New Project"** e importa tu repositorio `MerlyDev`.
-4. Vercel detectará automáticamente que es un proyecto **Vite** y lo desplegará en segundos con enlace HTTPS gratuito y despliegues continuos cada vez que hagas `git push`.
+<div align="center">
 
+  **¿Tienes una idea, un proyecto o una invitación a un hackatón? ¡Hablemos!**
+
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Merly-85984e?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+  [![GitHub](https://img.shields.io/badge/GitHub-MerlyDev-323e11?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
+  [![Email](https://img.shields.io/badge/Email-contacto-e59828?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contacto@merlymalena2303@hotmail.com)
+
+  <br/>
+  
+  <sub>Diseñado y desarrollado con dedicación por <strong>Merly</strong> 🐝 • 2026</sub>
+
+</div>

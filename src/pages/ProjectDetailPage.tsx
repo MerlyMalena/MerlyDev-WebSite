@@ -89,15 +89,25 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 <div className="p-6 sm:p-8 rounded-[28px] bg-[#cbd99e]/40 border-2 border-[#85984e]/30 space-y-4">
                   <h3 className="text-lg font-bold text-[#6c7c39] uppercase tracking-wider flex items-center gap-2">
                     <CheckCircle2 size={20} className="text-[#85984e]" />
-                    Aspectos Destacados & Retos Técnicos
+                    {project.highlightsTitle || 'Aspectos Destacados & Retos Técnicos'}
                   </h3>
                   <ul className="grid grid-cols-1 gap-3 font-sans">
-                    {project.highlights.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-[#323e11]/90">
-                        <span className="text-[#85984e] font-bold mt-1">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
+                    {project.highlights.map((item, idx) => {
+                      const colonIdx = item.indexOf(':');
+                      return (
+                        <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-[#323e11]/90">
+                          <span className="text-[#85984e] font-bold mt-1">•</span>
+                          {colonIdx !== -1 ? (
+                            <span>
+                              <strong className="font-bold text-[#323e11]">{item.slice(0, colonIdx + 1)}</strong>
+                              {item.slice(colonIdx + 1)}
+                            </span>
+                          ) : (
+                            <span>{item}</span>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
