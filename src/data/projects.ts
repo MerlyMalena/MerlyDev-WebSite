@@ -20,7 +20,7 @@ export const PROJECTS_DATA: Project[] = [
     shortDescription: 'Espacio digital interactivo donde comparto mis desarrollos técnicos, reflexiones sobre software y proyectos personales con un diseño moderno y accesible.',
     fullDescription: 'Un portafolio y blog personal concebido para documentar mi trayectoria en tecnología de manera cercana y visual. El sitio combina una arquitectura desacoplada y limpia en React con animaciones fluidas mediante Framer Motion, una navegación ágil y una estética visual armónica construida con Tailwind CSS. Está diseñado para ofrecer una experiencia intuitiva tanto a desarrolladores como a cualquier persona interesada en el aprendizaje y la creación digital.',
     category: 'frontend',
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+    image: '../public/images/proyectos/MerlyDevPort.png',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
     githubUrl: 'https://github.com/MerlyMalena/MerlyDev',
     liveUrl: '#',
