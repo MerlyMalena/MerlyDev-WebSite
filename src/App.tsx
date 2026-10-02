@@ -150,7 +150,7 @@ function App() {
         )}
         {currentRoute === 'articulo-detalle' && (
           <BlogDetailPage
-            postId={selectedPostId || BLOGS_DATA[0].id}
+            postId={selectedPostId || BLOGS_DATA[0]?.id || ''}
             onBack={() => navigate('blog')}
             onSelectOtherPost={(id) => navigate('articulo-detalle', id)}
           />

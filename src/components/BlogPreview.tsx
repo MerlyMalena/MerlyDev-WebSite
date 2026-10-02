@@ -62,64 +62,70 @@ export const BlogPreview: React.FC<BlogPreviewProps> = ({ onViewAll, onSelectPos
             </a>
           </div>
 
-          {/* 3 Recent Blogs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {recentBlogs.map((post) => (
-              <motion.article
-                key={post.id}
-                whileHover={{ y: -5 }}
-                onClick={() => handleSelect(post.id)}
-                className="cursor-pointer rounded-[24px] bg-[#FAF8F2] border-2 border-[#85984e]/30 overflow-hidden shadow-xs hover:shadow-lg hover:border-[#85984e] transition-all flex flex-col justify-between group"
-              >
-                {/* Cover Image */}
-                <div className="relative h-32 sm:h-36 w-full overflow-hidden bg-[#cbd99e]/30">
-                  <img
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#323e11]/60 via-transparent to-transparent opacity-50" />
-                </div>
-
-                {/* Body */}
-                <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5">
-                  <div>
-                    <div className="flex items-center justify-between text-[11px] font-bold text-[#85984e] mb-1.5 font-sans">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={11} />
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={11} />
-                        {post.readTime}
-                      </span>
-                    </div>
-
-                    <h3 className="text-base font-bold text-[#6c7c39] leading-snug line-clamp-1 group-hover:text-[#323e11] transition-colors">
-                      {post.title}
-                    </h3>
-
-                    <p className="mt-1 text-xs text-[#323e11]/80 line-clamp-2 font-sans leading-relaxed">
-                      {post.summary}
-                    </p>
+          {/* Recent Blogs Grid */}
+          {recentBlogs.length === 0 ? (
+            <div className="text-center py-12 bg-[#cbd99e]/20 rounded-[28px] border-2 border-dashed border-[#85984e]/30">
+              <p className="text-sm font-sans text-[#323e11]/80">Próximamente nuevos artículos y notas de desarrollo...</p>
+            </div>
+          ) : (
+            <div className={recentBlogs.length === 1 ? "max-w-md mx-auto w-full" : "grid grid-cols-1 md:grid-cols-3 gap-5"}>
+              {recentBlogs.map((post) => (
+                <motion.article
+                  key={post.id}
+                  whileHover={{ y: -5 }}
+                  onClick={() => handleSelect(post.id)}
+                  className="cursor-pointer rounded-[24px] bg-[#FAF8F2] border-2 border-[#85984e]/30 overflow-hidden shadow-xs hover:shadow-lg hover:border-[#85984e] transition-all flex flex-col justify-between group"
+                >
+                  {/* Cover Image */}
+                  <div className="relative h-32 sm:h-36 w-full overflow-hidden bg-[#cbd99e]/30">
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#323e11]/60 via-transparent to-transparent opacity-50" />
                   </div>
 
-                  <div className="pt-2.5 border-t border-[#85984e]/20 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#6c7c39] group-hover:text-[#323e11] flex items-center gap-1">
-                      Leer nota completa →
-                    </span>
-                    <div className="flex gap-1">
-                      {post.tags.slice(0, 2).map((t) => (
-                        <span key={t} className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#cbd99e]/40 text-[#323e11]">
-                          {t}
+                  {/* Body */}
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5">
+                    <div>
+                      <div className="flex items-center justify-between text-[11px] font-bold text-[#85984e] mb-1.5 font-sans">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={11} />
+                          {post.date}
                         </span>
-                      ))}
+                        <span className="flex items-center gap-1">
+                          <Clock size={11} />
+                          {post.readTime}
+                        </span>
+                      </div>
+
+                      <h3 className="text-base font-bold text-[#6c7c39] leading-snug line-clamp-1 group-hover:text-[#323e11] transition-colors">
+                        {post.title}
+                      </h3>
+
+                      <p className="mt-1 text-xs text-[#323e11]/80 line-clamp-2 font-sans leading-relaxed">
+                        {post.summary}
+                      </p>
+                    </div>
+
+                    <div className="pt-2.5 border-t border-[#85984e]/20 flex items-center justify-between">
+                      <span className="text-xs font-bold text-[#6c7c39] group-hover:text-[#323e11] flex items-center gap-1">
+                        Leer nota completa →
+                      </span>
+                      <div className="flex gap-1">
+                        {post.tags.slice(0, 2).map((t) => (
+                          <span key={t} className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#cbd99e]/40 text-[#323e11]">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

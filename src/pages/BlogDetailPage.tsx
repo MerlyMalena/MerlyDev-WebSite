@@ -16,7 +16,21 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const post = BLOGS_DATA.find((b) => b.id === postId) || BLOGS_DATA[0];
-  const otherPosts = BLOGS_DATA.filter((b) => b.id !== post.id).slice(0, 2);
+  const otherPosts = post ? BLOGS_DATA.filter((b) => b.id !== post.id).slice(0, 2) : [];
+
+  if (!post) {
+    return (
+      <div className="pt-32 pb-20 px-4 text-center font-serif">
+        <p className="text-xl text-[#323e11]">No hay artículos disponibles en este momento.</p>
+        <button
+          onClick={onBack}
+          className="mt-6 px-6 py-2.5 rounded-full bg-[#85984e] text-white font-bold hover:bg-[#323e11] transition-all"
+        >
+          Volver al Inicio
+        </button>
+      </div>
+    );
+  }
 
   const handleShare = () => {
     if (navigator.clipboard) {

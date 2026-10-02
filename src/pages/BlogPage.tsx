@@ -88,7 +88,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateHome, onSelectPost
             <p className="text-[#323e11]/80 text-lg font-sans">No se encontraron artículos con ese criterio.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className={filteredPosts.length === 1 ? "max-w-xl mx-auto w-full" : "grid grid-cols-1 md:grid-cols-2 gap-8"}>
             {filteredPosts.map((post) => (
               <motion.article
                 key={post.id}
