@@ -227,35 +227,37 @@ export const CompetitionDetailPage: React.FC<CompetitionDetailPageProps> = ({
               )}
 
               {/* Actions Box */}
-              <div className="p-6 rounded-[28px] bg-white border-2 border-[#85984e]/30 space-y-4 shadow-xs">
-                <h4 className="text-base font-bold text-[#6c7c39]">
-                  Enlaces del Proyecto
-                </h4>
+              {((item.liveUrl && item.liveUrl !== '#') || (item.githubUrl && item.githubUrl !== '#' && item.githubUrl !== 'https://github.com')) && (
+                <div className="p-6 rounded-[28px] bg-white border-2 border-[#85984e]/30 space-y-4 shadow-xs">
+                  <h4 className="text-base font-bold text-[#6c7c39]">
+                    Enlaces del Proyecto
+                  </h4>
 
-                {item.liveUrl && item.liveUrl !== '#' && (
-                  <a
-                    href={item.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full font-serif font-bold text-white bg-[#85984e] hover:bg-[#323e11] shadow-md transition-all text-sm"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Ver Proyecto en Vivo</span>
-                  </a>
-                )}
+                  {item.liveUrl && item.liveUrl !== '#' && (
+                    <a
+                      href={item.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full font-serif font-bold text-white bg-[#85984e] hover:bg-[#323e11] shadow-md transition-all text-sm"
+                    >
+                      <ExternalLink size={16} />
+                      <span>Ver Proyecto en Vivo</span>
+                    </a>
+                  )}
 
-                {item.githubUrl && (
-                  <a
-                    href={item.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full font-serif font-bold text-[#6c7c39] bg-[#FAF8F2] hover:bg-[#85984e] hover:text-white border-2 border-[#85984e]/40 shadow-xs transition-all text-sm"
-                  >
-                    <Github size={16} />
-                    <span>Repositorio en GitHub</span>
-                  </a>
-                )}
-              </div>
+                  {item.githubUrl && item.githubUrl !== '#' && item.githubUrl !== 'https://github.com' && (
+                    <a
+                      href={item.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full font-serif font-bold text-[#6c7c39] bg-[#FAF8F2] hover:bg-[#85984e] hover:text-white border-2 border-[#85984e]/40 shadow-xs transition-all text-sm"
+                    >
+                      <Github size={16} />
+                      <span>Repositorio en GitHub</span>
+                    </a>
+                  )}
+                </div>
+              )}
 
               {/* Technologies Used */}
               <div className="p-6 rounded-[28px] bg-white border-2 border-[#85984e]/30 space-y-3 shadow-xs">

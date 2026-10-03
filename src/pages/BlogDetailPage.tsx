@@ -199,7 +199,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
                   Software Developer & Creator en MerlyDev
                 </p>
                 <p className="text-sm text-[#323e11]/85 font-sans pt-1">
-                  Escribo sobre desarrollo frontend, interfaces limpias y arquitecturas mantenibles con el cuidado de una colmena.
+                  Todo problema tiene salida; solo hay que saber diseñar la solución.
                 </p>
               </div>
             </div>

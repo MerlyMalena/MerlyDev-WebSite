@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
     message: '',
   });
 
-  const email = 'contacto@merly.dev';
+  const email = 'merlymalena2303@hotmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
 
                 {/* LinkedIn Link */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/merly-hern%C3%A1ndez-a22984430/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3.5 rounded-2xl bg-white border-2 border-[#85984e]/20 flex items-center justify-between hover:border-[#85984e] transition-colors group"
@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
 
                 {/* GitHub Link */}
                 <a
-                  href="https://github.com"
+                  href="https://github.com/MerlyMalena"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3.5 rounded-2xl bg-white border-2 border-[#85984e]/20 flex items-center justify-between hover:border-[#85984e] transition-colors group"

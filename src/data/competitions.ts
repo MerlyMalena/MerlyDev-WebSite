@@ -5,91 +5,93 @@ export const COMPETITIONS_DATA: Competition[] = [
     id: 'hackaton-por-los-derechos',
     title: 'Hackathon Por los Derechos 2026',
     organizer: 'Defensor del Pueblo',
-    teamName: 'Mecaflow',
+    teamName: 'Meca Flow',
     teamMembers: [
-      'José Nicolás Sánchez (NikoVanetti)' ,
+      'José Nicolás Sánchez (NikoVanetti)',
       'Huascar Zapata',
       'Mayelin',
       'Abel',
       'Merly Malena',
     ],
     category: 'Hackathon 48 Horas',
-    award: '🏆 2do Lugar - Eje de Economía de Triple Impacto',
+    award: '🏆 2do Lugar — Eje de Economía de Triple Impacto',
     date: 'Mayo 2026',
-    location: 'Santo Domingo',
-    shortDescription: 'Desarrollo de un sistema de drenaje para la prevención en caso de inundaciones.',
-    fullDescription: ``,
+    location: 'Santo Domingo, Rep. Dom.',
+    shortDescription: 'Sistema inteligente para mitigar inundaciones y generar energía limpia con lluvia, integrando la barrera automática HydroShield.',
+    fullDescription: `La iniciativa Meca Flow busca reducir las inundaciones urbanas y la dependencia de los combustibles fósiles en República Dominicana, mediante un sistema inteligente que monitorea el drenaje y genera energía limpia a partir del flujo de lluvia.
+
+Además, incorpora el HydroShield, una barrera automática contra inundaciones que funciona sin electricidad y promueve la economía circular al reutilizar plástico reciclado para fabricar parte de la infraestructura. De este modo, procura ofrecer mayor seguridad y sostenibilidad a las familias dominicanas.`,
     projectBuilt: 'AquaShield',
-    projectSummary: 'Plataforma web con mapa interactivo y gestión de inventario para bancos de alimentos comunitarios.',
-    tags: ['C#', '.NET', 'SQL Server', 'React', 'Arquitectura Limpia'],
+    projectSummary: 'Monitoreo inteligente de drenaje, barrera hidromecánica autónoma HydroShield y generación de energía limpia basada en flujo pluvial y economía circular.',
+    tags: ['Sostenibilidad', 'Economía Circular', 'IoT', 'Energía Limpia', 'C#', '.NET'],
     image: '/images/competencias/Defensordelpueblo-Mecaflow.jpg',
     highlights: [
-      'Segundo lugar obtenido entre más de 20 equipos universitarios y profesionales.',
-      'Pitch técnico final de 5 minutos ante jurados expertos'
+      '🏆 2do Lugar en el Eje de Economía de Triple Impacto.',
+      'Barrera HydroShield: protección hidromecánica automática contra inundaciones sin consumo eléctrico.',
+      'Generación de energía limpia aprovechando el caudal del flujo de lluvia.',
+      'Fomento de la economía circular utilizando plástico reciclado en la infraestructura física.',
+      'Defensa de pitch técnico y prototipo funcional ante el panel de jurados del Defensor del Pueblo.'
     ],
     githubUrl: 'https://github.com',
     liveUrl: '#'
   },
   {
     id: 'CodeJam',
-    title: 'CodeJam 2026',
-    organizer: 'CICC: PUCMM',
-    category: 'Competencia de programación',
+    title: 'Code Jam 2026',
+    organizer: 'CICC — Club de Programación Competitiva (PUCMM)',
+    category: 'Programación Competitiva',
     award: 'Participación',
     date: 'Junio 2026',
-    location: 'Sede Santiago',
-    shortDescription: 'Resolución de problemas complejos de optimización matemática, teoría de grafos y manipulación de memoria con C#.',
-    fullDescription: `Competencia intensiva individual y grupal centrada en la resolución de problemas algorítmicos contrarreloj bajo estrictas limitaciones de tiempo de CPU y memoria.
+    location: 'Campus Santiago, PUCMM (STI)',
+    shortDescription: 'Competencia oficial en PUCMM Santiago bajo el lema "Aprende. Practica. Construye.", resolviendo retos algorítmicos contrarreloj estilo ICPC.',
+    fullDescription: `Competencia de programación competitiva organizada por el CICC (Comité de Estudiantes de Ingeniería en Ciencias de la Computación / Club de Programación Competitiva) de la Pontificia Universidad Católica Madre y Maestra (PUCMM) en su Campus Santiago.
 
-Se evaluó la eficiencia asintótica de las soluciones (notación Big-O), el dominio de colecciones genéricas de C#, algoritmos de búsqueda y ordenamiento avanzado, así como la prevención de excepciones en tiempo de ejecución.
+Bajo el lema oficial "Aprende. Practica. Construye.", la competencia reunió a estudiantes en una intensa jornada presencial para resolver problemas algorítmicos de alto nivel contrarreloj, inspirados en los estándares internacionales de ICPC y Codeforces.
 
-Logré resolver 2 de 8 retos algorítmicos complejos en el menor tiempo registrado`,
-    projectBuilt: 'GraphOptimizer C#',
-    projectSummary: 'Suite de algoritmos de optimización de rutas y análisis de árboles de expansión mínima.',
-    tags: ['C#', 'Algoritmos', 'Estructuras de Datos', 'Big-O', 'Optimización'],
+Durante el certamen se abordaron retos centrados en manipulación eficiente de entrada y salida estándar, estructuras de datos avanzadas, optimización asintótica (Big-O), lógica matemática y prevención de fallos en tiempo de ejecución.`,
+    projectBuilt: 'Soluciones Algorítmicas Code Jam',
+    projectSummary: 'Implementación de algoritmos de optimización, manejo de grafos y estructuras de datos con estricto control de tiempo de CPU y memoria.',
+    tags: ['Programación Competitiva', 'Algoritmos', 'Estructuras de Datos', 'Big-O', 'ICPC', 'C#'],
     image: '/images/competencias/CodeJam2026.jpg',
     highlights: [
-      '2do lugar entre más de 120 participantes a nivel nacional.',
-      'Soluciones con complejidad O(N log N) en problemas de grafos dirigidos.',
-      'Uso eficiente de tipos por valor y gestión de memoria sin sobrecargar el Garbage Collector de .NET.',
-      'Resolución de casos límite (edge cases) con cobertura del 100% de los tests automáticos.'
+      'Competencia oficial organizada por el CICC (PUCMM Campus Santiago).',
+      'Lema oficial: "Aprende. Practica. Construye."',
+      'Resolución de problemas de alta complejidad bajo formato competitivo estilo ICPC y Codeforces.',
+      'Optimización asintótica estricta con límites reducidos de tiempo de CPU y memoria.',
+      'Dominio de estructuras de datos, lógica matemática y colecciones eficientes.'
     ],
     githubUrl: 'https://github.com',
     liveUrl: '#'
   },
   {
     id: 'AlphaRamosWeek',
-    title: 'AlphaRamosWeek 2026',
+    title: 'AlphaRamos Week 2026',
     organizer: 'Grupo Ramos',
     teamName: 'Equipo Pulse',
     teamMembers: [
-      'César ',
+      'César',
       'Jinellys',
       'Johan Vicente',
       'Merly Malena Hernández',
     ],
-    category: 'Hackatón de Retail',
+    category: 'Innovación Abierta / Retail Tech',
     award: 'Participación',
     date: 'Agosto 2026',
-    location: 'UNIBE',
-    shortDescription: 'Sistema de telemetría y dashboard analítico para monitorizar la eficiencia energética y métricas ambientales.',
-    fullDescription: `Convocatoria orientada a crear soluciones de software que ayuden a mitigar la huella de carbono y optimizar el consumo de recursos en entornos corporativos y educativos.
+    location: 'Santo Domingo, Rep. Dom.',
+    shortDescription: 'Programa de innovación abierta de Grupo Ramos para transformar el retail moderno con foco en experiencia del cliente, operaciones y sostenibilidad.',
+    fullDescription: `AlphaRamos Week es el programa oficial de innovación abierta de Grupo Ramos, concebido para conectar el talento universitario multidisciplinario con los desafíos reales de la industria del retail bajo la premisa de que "innovar comienza con quienes se atreven a construir el futuro".
 
-Desarrollamos un prototipo funcional que recolecta métricas de consumo en tiempo real, las almacena en una base de datos centralizada y genera reportes analíticos con alertas tempranas ante anomalías.
+Durante una semana intensiva que abarcó formación en metodologías ágiles, mentorías personalizadas de líderes empresariales y sesiones de resolución estratégica, nuestro equipo colaboró en el diseño de propuestas innovadoras orientadas a los ejes clave de la organización: experiencia del cliente, eficiencia operativa y sostenibilidad en retail.
 
-El jurado destacó la claridad y separación de capas del software, otorgándonos la mención de honor a la mejor arquitectura técnica.`,
-    projectBuilt: 'GreenMetrics Telemetry',
-    projectSummary: 'Dashboard en tiempo real para análisis de consumo energético y huella de carbono.',
-    tags: ['SQL Server', 'TypeScript', 'Tailwind CSS', 'Telemetría', 'Cloud'],
+El proceso culminó con la presentación y defensa de la propuesta ante un panel de jurados ejecutivos y referentes tecnológicos de Grupo Ramos. (Nota: Por acuerdo de confidencialidad, los detalles técnicos y el proyecto desarrollado se mantienen bajo reserva).`,
+    tags: ['Retail Tech', 'Sostenibilidad', 'Innovación Abierta', 'Estrategia', 'Retail'],
     image: '/images/competencias/AlphaRamosWeek.jpg',
     highlights: [
-      'Premio a la Mejor Arquitectura de Software del evento.',
-      'Pipelines de ingesta de datos simulados con WebSocket y persistencia periódica.',
-      'Diseño de interfaz con enfoque accesible y visualización clara de gráficos de tendencias.',
-      'Presentación de caso de negocio y sostenibilidad ante directores de tecnología.'
-    ],
-    githubUrl: 'https://github.com',
-    liveUrl: '#'
+      'Seleccionados por la universidad para participar en la 2da edición oficial de AlphaRamos Week.',
+      'Alineación estratégica con los desafíos del retail: operaciones eficientes, experiencia y sostenibilidad.',
+      'Acompañamiento y mentorías especializadas con directores del sector retail y expertos tecnológicos.',
+      'Defensa de propuesta y caso de negocio ante el jurado evaluador ejecutivo.',
+      'Proyecto desarrollado bajo acuerdo de confidencialidad (NDA).'
+    ]
   }
 ];
-
