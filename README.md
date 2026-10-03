@@ -1,14 +1,14 @@
 <div align="center">
 
   # 🍯 `MerlyDev`
-  ### *Construyendo soluciones digitales pensadas, ordenadas y vivas — celda a celda.*
+  ### *Portafolio Web*
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Honeybee.png" alt="Honeybee" width="70" height="70" />
   </p>
 
   <p align="center">
-    <strong>Portafolio personal interactivo inspirado en la armonía natural de una colmena y paisajes en acuarela.</strong>
+    <strong>Portafolio personal interactivo.</strong>
   </p>
 
   <p align="center">
