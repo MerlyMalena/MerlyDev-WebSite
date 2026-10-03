@@ -79,41 +79,6 @@
  └── 7. 📬 Contacto & Redes            ──> Canales directos y formulario
 ```
 
----
-
-## 💻 Instalación y Uso Local
-
-Sigue estos sencillos pasos para clonar y ejecutar el proyecto en tu máquina:
-
-```bash
-# 1. Clona el repositorio
-git clone https://github.com/tu-usuario/MerlyDev.git
-
-# 2. Entra en la carpeta del proyecto
-cd MerlyDev
-
-# 3. Instala las dependencias necesarias
-npm install
-
-# 4. Inicia el servidor de desarrollo
-npm run dev
-```
-
-Abre tu navegador en:
-👉 `http://localhost:5173/`
-
-### 📦 Otros Comandos
-
-```bash
-# Compilar para producción (TypeScript + Vite)
-npm run build
-
-# Previsualizar el resultado de producción
-npm run preview
-```
-
----
-
 ##  Estructura del Código
 
 ```text
@@ -146,19 +111,6 @@ MerlyDev/
 │   └── App.tsx                     # Enrutador hash y estructura global
 ```
 
----
-
-## 🚀 Despliegue en Producción (Vercel / Netlify / GitHub Pages)
-
-Este proyecto está optimizado con **enrutamiento por Hash** (`#/`), lo que garantiza que nunca tendrás errores `404 Not Found` al refrescar o recargar en servidores estáticos:
-
-1. Conecta tu repositorio de GitHub a [Vercel](https://vercel.com/) o [Netlify](https://www.netlify.com/).
-2. El sistema detectará automáticamente la configuración:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-3. ¡Listo! Tu portafolio estará online con certificado SSL gratuito y despliegues automáticos en cada `git push`.
-
----
 
 ## 📬 Contacto & Conexión
 
