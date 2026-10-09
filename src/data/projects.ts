@@ -22,7 +22,7 @@ export const PROJECTS_DATA: Project[] = [
     category: 'frontend',
     image: '/images/proyectos/MerlyDevPort.png',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
-    githubUrl: 'https://github.com/MerlyMalena/MerlyDev',
+    githubUrl: 'https://github.com/MerlyMalena/MerlyDev-WebSite',
     liveUrl: '#',
     featured: true,
     date: '2026',

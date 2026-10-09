@@ -4,7 +4,7 @@ import { Sparkles } from 'lucide-react';
 import { HoneycombIcon } from './HoneycombIcon';
 
 // Ruta de tu foto en la carpeta public/images/competencias/
-const PROFILE_IMAGE = '/images/competencias/Me.jpg';
+const PROFILE_IMAGE = '/images/competencias/Me.webp';
 
 export const About: React.FC = () => {
   return (

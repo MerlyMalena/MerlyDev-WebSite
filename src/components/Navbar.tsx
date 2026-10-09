@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute: _currentRoute = 'h
               <Linkedin size={22} strokeWidth={2.2} />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/MerlyMalena"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
