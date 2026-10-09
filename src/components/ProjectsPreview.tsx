@@ -21,7 +21,7 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({ onViewAll, onS
   };
 
   return (
-    <section id="proyectos" className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 relative font-serif scroll-mt-24">
+    <section id="proyectos" className="min-h-[85vh] flex items-center justify-center pt-24 pb-14 sm:pt-28 sm:pb-20 px-3 sm:px-6 relative font-serif scroll-mt-28">
       <div className="w-full max-w-5xl mx-auto">
         {/* Contenedor transparente idéntico al de Sobre Mí */}
         <motion.div
@@ -29,7 +29,7 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({ onViewAll, onS
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#cbd99e]/60 rounded-[32px] sm:rounded-[40px] border-2 border-[#85984e]/40 p-6 sm:p-8 md:p-9 shadow-lg shadow-[#6c7c39]/10"
+          className="bg-[#cbd99e]/60 rounded-[28px] sm:rounded-[40px] border-2 border-[#85984e]/40 p-4 sm:p-8 md:p-9 shadow-lg shadow-[#6c7c39]/10"
         >
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">

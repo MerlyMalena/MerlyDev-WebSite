@@ -40,7 +40,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 px-4 sm:px-6 relative font-serif">
+    <section id="contacto" className="py-20 px-4 sm:px-6 relative font-serif scroll-mt-28">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">

@@ -8,7 +8,7 @@ const PROFILE_IMAGE = '/images/competencias/Me.webp';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre-mi" className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 relative font-serif scroll-mt-24">
+    <section id="sobre-mi" className="min-h-[85vh] flex items-center justify-center pt-24 pb-14 sm:pt-28 sm:pb-20 px-3 sm:px-6 relative font-serif scroll-mt-28">
       <div className="w-full max-w-5xl mx-auto">
         {/* Main Card Only (Sin los 3 bloques inferiores) */}
         <motion.div
@@ -16,7 +16,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#cbd99e]/60 rounded-[32px] sm:rounded-[40px] border-2 border-[#85984e]/40 p-8 sm:p-12 md:p-14 shadow-lg shadow-[#6c7c39]/10"
+          className="bg-[#cbd99e]/60 rounded-[28px] sm:rounded-[40px] border-2 border-[#85984e]/40 p-5 sm:p-12 md:p-14 shadow-lg shadow-[#6c7c39]/10"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Card: Mindset, Identity & Photo */}
